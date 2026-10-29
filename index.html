@@ -209,7 +209,7 @@ var CATS=[
 ];
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 var ROM=['I','II','III','IV','V','VI'],DOCS=[];
-CATS.forEach(function(c){c.docs.forEach(function(n,i){var nn=String(i+1).padStart(2,'0');DOCS.push({id:c.id+'-'+nn,nn:nn,cat:c,name:n,path:'documenti/'+c.id+'/'+nn+'-'+slug(n)})})});
+CATS.forEach(function(c){c.docs.forEach(function(n,i){var nn=String(i+1).padStart(2,'0');DOCS.push({id:c.id+'-'+nn,nn:nn,cat:c,name:n,path:c.id+'/'+nn+'-'+slug(n)})})});
 
 /* dati salvati solo sul dispositivo */
 var S={};try{S=JSON.parse(localStorage.getItem('mp-app')||'{}')}catch(e){}
